@@ -55,6 +55,11 @@ variable "fusion_path" {
   default = "/Applications/VMware Fusion.app"
 }
 
+variable "guest_os" {
+  type    = string
+  default = "vmware-photon-64"
+}
+
 # source from iso
 source "vmware-iso" "photon" {
   fusion_app_path      = var.fusion_path
@@ -67,7 +72,7 @@ source "vmware-iso" "photon" {
   ssh_username         = "${var.user_username}"
   ssh_password         = "${var.user_password}"
   shutdown_command     = "sudo shutdown -h now"
-  guest_os_type        = "vmware-photon-64"
+  guest_os_type        = var.guest_os
   cdrom_adapter_type   = "sata"
   disk_size            = "100000"
   disk_adapter_type    = "nvme"
