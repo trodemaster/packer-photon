@@ -60,6 +60,11 @@ variable "guest_os" {
   default = "vmware-photon-64"
 }
 
+variable "vhw_version" {
+  type    = string
+  default = "18"
+}
+
 # source from iso
 source "vmware-iso" "photon" {
   fusion_app_path      = var.fusion_path
@@ -81,7 +86,7 @@ source "vmware-iso" "photon" {
   disk_type_id         = "0"
   ssh_timeout          = "12h"
   usb                  = "true"
-  version              = "18"
+  version              = var.vhw_version
   cpus                 = var.cpu_count
   cores                = var.cpu_count
   memory               = var.ram_gb * 1024
