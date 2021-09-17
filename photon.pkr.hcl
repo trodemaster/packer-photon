@@ -88,7 +88,7 @@ source "vmware-iso" "photon" {
   vmx_data = {
     "ulm.disableMitigations" = "TRUE",
     "firmware"               = "efi",
-    "svga.autodetect" = "TRUE"
+    "svga.vramSize" = "134217728"
   }
   boot_wait              = var.boot_wait_iso
   boot_key_interval      = var.boot_key_interval_iso
