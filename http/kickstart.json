@@ -7,6 +7,7 @@
   "bootmode": "efi",
   "disk": "/dev/nvme0n1",
   "linux_flavor": "linux",
+  "public_key": "<ssh-key-here>",
   "packagelist_file": "packages_minimal.json",
   "postinstall": [
       "#!/bin/sh",

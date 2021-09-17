@@ -50,9 +50,14 @@ variable "boot_keygroup_interval_iso" {
   default = "1s"
 }
 
+variable "fusion_path" {
+  type    = string
+  default = "/Applications/VMware Fusion.app"
+}
 
 # source from iso
 source "vmware-iso" "photon" {
+  fusion_app_path      = var.fusion_path
   display_name         = "{{build_name}}"
   vm_name              = "{{build_name}}"
   vmdk_name            = "{{build_name}}"
@@ -77,7 +82,7 @@ source "vmware-iso" "photon" {
   memory               = var.ram_gb * 1024
   vmx_data = {
     "ulm.disableMitigations" = "TRUE",
-    "firmware" = "efi"
+    "firmware"               = "efi"
   }
   boot_wait              = var.boot_wait_iso
   boot_key_interval      = var.boot_key_interval_iso
