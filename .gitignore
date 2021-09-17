@@ -6,3 +6,5 @@ crash.log
 
 # For built boxes
 *.box
+photon.pkrvars.hcl
+.DS_Store
