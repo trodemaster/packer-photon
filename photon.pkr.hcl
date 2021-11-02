@@ -42,7 +42,7 @@ variable "boot_key_interval_iso" {
 
 variable "boot_wait_iso" {
   type    = string
-  default = "2s"
+  default = "3s"
 }
 
 variable "boot_keygroup_interval_iso" {
@@ -62,7 +62,7 @@ variable "guest_os" {
 
 variable "vhw_version" {
   type    = string
-  default = "18"
+  default = "19"
 }
 
 # source from iso
@@ -111,4 +111,13 @@ build {
   sources = [
     "sources.vmware-iso.photon"
   ]
+
+    provisioner "file" {
+    sources     = ["files/config.json"]
+    destination = "~/"
+  }
+
+    provisioner "shell" {
+    script            = "scripts/configure.sh"
+  }
 }
