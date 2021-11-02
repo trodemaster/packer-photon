@@ -65,6 +65,11 @@ variable "vhw_version" {
   default = "19"
 }
 
+variable "login_ssh_key" {
+  type    = string
+  default = ""
+}
+
 # source from iso
 source "vmware-iso" "photon" {
   fusion_app_path      = var.fusion_path
