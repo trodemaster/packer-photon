@@ -1,0 +1,5 @@
+iso_filename = "https://packages.vmware.com/photon/4.0/Rev1/iso/photon-4.0-ca7c9e933-aarch64.iso"
+iso_file_checksum = "sha1:561ff47ca1dfc418b64a06b41dbbb1cc13501231"
+fusion_path = "/Applications/VMware Fusion Tech Preview.app"
+guest_os = "arm-vmware-photon-64"
+vhw_version = "19"
